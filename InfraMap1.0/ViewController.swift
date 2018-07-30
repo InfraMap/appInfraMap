@@ -8,12 +8,17 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, CLLocationManagerDelegate, MKMapViewDelegate {
 
     let locationManager = CLLocationManager()
     
-    var imagemPassada: UIImageView!
+    let annotation = MKPointAnnotation()
+    
+    @IBOutlet weak var infraMap: MKMapView!
+    
+    var imagemPassada: UIImage!
     
     @IBOutlet weak var location: UILabel!
     
@@ -24,6 +29,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view, typically from a nib.
         
         //quando o app ligar no background
@@ -37,6 +43,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyBest // You can change the locaiton accuary here.
             locationManager.startUpdatingLocation()
+            self.infraMap.showsUserLocation = true
         }
     }
 
@@ -48,13 +55,18 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
      // Print out the location to the console
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
-//        print("locations = \(locValue.latitude) \(locValue.longitude)")
+        print("locations = \(locValue.latitude) \(locValue.longitude)")
         
         if canChange == true {
+            
             latitudeDoUsuario = locValue.latitude
             longitudeDoUsuario = locValue.longitude
+            location.text = String(describing: latitudeDoUsuario!)
             print(latitudeDoUsuario!)
             print(longitudeDoUsuario!)
+            
+            annotation.coordinate = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
+            infraMap.addAnnotation(annotation)
             canChange = false
         }
         
@@ -82,8 +94,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         if let pickedImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
         
-            imagemPassada.contentMode = .scaleToFill
-            imagemPassada.image = pickedImage
+//            imagemPassada.contentMode = .scaleToFill
+            imagemPassada = pickedImage
             
             
            
