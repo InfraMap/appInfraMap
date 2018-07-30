@@ -7,14 +7,18 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3F463D3F210FAF69002A8F6D /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F463D3E210FAF69002A8F6D /* Status.swift */; };
 		3F87C2E4210B95F800D0B3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */; };
 		3F87C2E6210B95F800D0B3DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87C2E5210B95F800D0B3DA /* ViewController.swift */; };
 		3F87C2E9210B95F800D0B3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F87C2E7210B95F800D0B3DA /* Main.storyboard */; };
 		3F87C2EB210B95F800D0B3DA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3F87C2EA210B95F800D0B3DA /* Assets.xcassets */; };
 		3F87C2EE210B95F800D0B3DA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F87C2EC210B95F800D0B3DA /* LaunchScreen.storyboard */; };
+		3FACFE15210FA98D00D6805E /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACFE14210FA98D00D6805E /* User.swift */; };
+		3FACFE17210FA9A300D6805E /* Alert.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3FACFE16210FA9A300D6805E /* Alert.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		3F463D3E210FAF69002A8F6D /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
 		3F87C2E0210B95F800D0B3DA /* InfraMap1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfraMap1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F87C2E5210B95F800D0B3DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -22,6 +26,8 @@
 		3F87C2EA210B95F800D0B3DA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3F87C2ED210B95F800D0B3DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3F87C2EF210B95F800D0B3DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FACFE14210FA98D00D6805E /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		3FACFE16210FA9A300D6805E /* Alert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Alert.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -35,6 +41,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3F463D40210FAF70002A8F6D /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				3F463D3E210FAF69002A8F6D /* Status.swift */,
+			);
+			name = Enum;
+			sourceTree = "<group>";
+		};
 		3F87C2D7210B95F800D0B3DA = {
 			isa = PBXGroup;
 			children = (
@@ -54,14 +68,49 @@
 		3F87C2E2210B95F800D0B3DA /* InfraMap1.0 */ = {
 			isa = PBXGroup;
 			children = (
-				3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */,
-				3F87C2E5210B95F800D0B3DA /* ViewController.swift */,
-				3F87C2E7210B95F800D0B3DA /* Main.storyboard */,
-				3F87C2EA210B95F800D0B3DA /* Assets.xcassets */,
-				3F87C2EC210B95F800D0B3DA /* LaunchScreen.storyboard */,
-				3F87C2EF210B95F800D0B3DA /* Info.plist */,
+				3FACFE12210FA8B600D6805E /* Controller */,
+				3FACFE10210FA8A300D6805E /* Model */,
+				3FACFE13210FA92100D6805E /* Supporting Files */,
+				3FACFE11210FA8AC00D6805E /* View */,
 			);
 			path = InfraMap1.0;
+			sourceTree = "<group>";
+		};
+		3FACFE10210FA8A300D6805E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3F463D40210FAF70002A8F6D /* Enum */,
+				3FACFE14210FA98D00D6805E /* User.swift */,
+				3FACFE16210FA9A300D6805E /* Alert.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		3FACFE11210FA8AC00D6805E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				3F87C2E7210B95F800D0B3DA /* Main.storyboard */,
+				3F87C2EC210B95F800D0B3DA /* LaunchScreen.storyboard */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		3FACFE12210FA8B600D6805E /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				3F87C2E5210B95F800D0B3DA /* ViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		3FACFE13210FA92100D6805E /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */,
+				3F87C2EA210B95F800D0B3DA /* Assets.xcassets */,
+				3F87C2EF210B95F800D0B3DA /* Info.plist */,
+			);
+			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -96,7 +145,7 @@
 				TargetAttributes = {
 					3F87C2DF210B95F800D0B3DA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 6KWFR7H9ND;
+						DevelopmentTeam = G2LYJ299M5;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -138,7 +187,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F87C2E6210B95F800D0B3DA /* ViewController.swift in Sources */,
+				3F463D3F210FAF69002A8F6D /* Status.swift in Sources */,
 				3F87C2E4210B95F800D0B3DA /* AppDelegate.swift in Sources */,
+				3FACFE17210FA9A300D6805E /* Alert.swift in Sources */,
+				3FACFE15210FA98D00D6805E /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,11 +315,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6KWFR7H9ND;
+				DEVELOPMENT_TEAM = G2LYJ299M5;
 				INFOPLIST_FILE = InfraMap1.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hackatruck.InfraMap1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMap1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -277,11 +329,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 6KWFR7H9ND;
+				DEVELOPMENT_TEAM = G2LYJ299M5;
 				INFOPLIST_FILE = InfraMap1.0/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.2.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.hackatruck.InfraMap1-0";
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMap1.0;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -306,6 +358,7 @@
 				3F87C2F4210B95F800D0B3DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
