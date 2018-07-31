@@ -9,21 +9,31 @@
 import Foundation
 
 class Alert {
-    
     var user: User
-    var IDPhotoAlert: String
+    var photoAlert: String
+    var type: Type
     var latitude: Double
     var longitude: Double
-    var comments: [String]
-    var status: Status
     
-    init(user: User, IDPhotoAlert: String, latitude: Double, longitude: Double, comments: [String], status: Status) {
+    init(user: User, photoAlert: String, type: Type, latitude: Double, longitude: Double, comments: [String]) {
         self.user = user
-        self.IDPhotoAlert = IDPhotoAlert
+        self.photoAlert = photoAlert
+        self.type = type
         self.latitude = latitude
         self.longitude = longitude
-        self.comments = comments
-        self.status = status
+    }
+    
+    func toJSON() -> Data {
+        let dataDict: [String: Any] = [
+            "user": user.toJSON(),
+            "photo_alert": photoAlert,
+            "type": type,
+            "latitude": latitude,
+            "longitude": longitude,
+            
+        ]
+        
+        return try! JSONSerialization.data(withJSONObject: dataDict)
     }
     
 }

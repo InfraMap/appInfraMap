@@ -7,7 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3F463D3F210FAF69002A8F6D /* Status.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F463D3E210FAF69002A8F6D /* Status.swift */; };
+		3F76A10E2110DB2C0021F9F7 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A10D2110DB2C0021F9F7 /* UserDAO.swift */; };
+		3F76A1102110DB5B0021F9F7 /* AlertDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A10F2110DB5B0021F9F7 /* AlertDAO.swift */; };
+		3F76A1132110EAE80021F9F7 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A1122110EAE80021F9F7 /* Type.swift */; };
+		3F76A1152110EC560021F9F7 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A1142110EC560021F9F7 /* Comment.swift */; };
+		3F76A1172110EFF90021F9F7 /* CommentDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A1162110EFF90021F9F7 /* CommentDAO.swift */; };
 		3F87C2E4210B95F800D0B3DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */; };
 		3F87C2E6210B95F800D0B3DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F87C2E5210B95F800D0B3DA /* ViewController.swift */; };
 		3F87C2E9210B95F800D0B3DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3F87C2E7210B95F800D0B3DA /* Main.storyboard */; };
@@ -18,7 +22,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		3F463D3E210FAF69002A8F6D /* Status.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Status.swift; sourceTree = "<group>"; };
+		3F76A10D2110DB2C0021F9F7 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
+		3F76A10F2110DB5B0021F9F7 /* AlertDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDAO.swift; sourceTree = "<group>"; };
+		3F76A1122110EAE80021F9F7 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
+		3F76A1142110EC560021F9F7 /* Comment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		3F76A1162110EFF90021F9F7 /* CommentDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CommentDAO.swift; sourceTree = "<group>"; };
 		3F87C2E0210B95F800D0B3DA /* InfraMap1.0.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfraMap1.0.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3F87C2E3210B95F800D0B3DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3F87C2E5210B95F800D0B3DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -41,10 +49,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		3F463D40210FAF70002A8F6D /* Enum */ = {
+		3F76A10C2110DAE30021F9F7 /* PersistenceDAO */ = {
 			isa = PBXGroup;
 			children = (
-				3F463D3E210FAF69002A8F6D /* Status.swift */,
+				3F76A10D2110DB2C0021F9F7 /* UserDAO.swift */,
+				3F76A10F2110DB5B0021F9F7 /* AlertDAO.swift */,
+				3F76A1162110EFF90021F9F7 /* CommentDAO.swift */,
+			);
+			name = PersistenceDAO;
+			sourceTree = "<group>";
+		};
+		3F76A1112110EA6A0021F9F7 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				3F76A1122110EAE80021F9F7 /* Type.swift */,
 			);
 			name = Enum;
 			sourceTree = "<group>";
@@ -79,9 +97,11 @@
 		3FACFE10210FA8A300D6805E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				3F463D40210FAF70002A8F6D /* Enum */,
 				3FACFE14210FA98D00D6805E /* User.swift */,
 				3FACFE16210FA9A300D6805E /* Alert.swift */,
+				3F76A1142110EC560021F9F7 /* Comment.swift */,
+				3F76A1112110EA6A0021F9F7 /* Enum */,
+				3F76A10C2110DAE30021F9F7 /* PersistenceDAO */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -187,10 +207,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				3F87C2E6210B95F800D0B3DA /* ViewController.swift in Sources */,
-				3F463D3F210FAF69002A8F6D /* Status.swift in Sources */,
+				3F76A10E2110DB2C0021F9F7 /* UserDAO.swift in Sources */,
 				3F87C2E4210B95F800D0B3DA /* AppDelegate.swift in Sources */,
+				3F76A1152110EC560021F9F7 /* Comment.swift in Sources */,
 				3FACFE17210FA9A300D6805E /* Alert.swift in Sources */,
+				3F76A1132110EAE80021F9F7 /* Type.swift in Sources */,
+				3F76A1102110DB5B0021F9F7 /* AlertDAO.swift in Sources */,
 				3FACFE15210FA98D00D6805E /* User.swift in Sources */,
+				3F76A1172110EFF90021F9F7 /* CommentDAO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

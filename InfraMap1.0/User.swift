@@ -18,4 +18,14 @@ class User {
         self.email = email
         self.password = password
     }
+    
+    func toJSON() -> Data {
+        let userDict = [
+            "name": name,
+            "email": email,
+            "password": password,
+        ]
+        
+        return try! JSONSerialization.data(withJSONObject: userDict)
+    }
 }
