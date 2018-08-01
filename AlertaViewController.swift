@@ -1,18 +1,17 @@
 //
-//  ComentViewController.swift
+//  AlertaViewController.swift
 //  InfraMap1.0
 //
-//  Created by student on 27/07/18.
+//  Created by student on 01/08/18.
 //  Copyright © 2018 França. All rights reserved.
 //
 
 import UIKit
 
-class ComentViewController: UIViewController {
+class AlertaViewController: UIViewController {
 
-    @IBOutlet weak var myImage: UIImageView!
-    
-    var theImagePassed = UIImage()
+    @IBOutlet weak var latitude: UILabel!
+    @IBOutlet weak var longitude: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
