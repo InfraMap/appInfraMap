@@ -12,10 +12,18 @@ class AlertaViewController: UIViewController {
 
     @IBOutlet weak var latitude: UILabel!
     @IBOutlet weak var longitude: UILabel!
+    @IBOutlet weak var foto: UIImageView!
+    
+    var lat: String?
+    var long: String?
+    var imagemRecebida: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        latitude.text = lat
+        longitude.text = long
+        
+        foto.image = imagemRecebida
         // Do any additional setup after loading the view.
     }
 

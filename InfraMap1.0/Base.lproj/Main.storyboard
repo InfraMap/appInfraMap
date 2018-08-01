@@ -82,10 +82,15 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kis-kB-UZb">
+                                <rect key="frame" x="0.0" y="72" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <connections>
+                        <outlet property="foto" destination="Kis-kB-UZb" id="Jn8-ps-uQd"/>
                         <outlet property="latitude" destination="nMe-mL-r5z" id="uNe-bf-J0v"/>
                         <outlet property="longitude" destination="Ief-bp-3NJ" id="tpB-18-9uL"/>
                     </connections>

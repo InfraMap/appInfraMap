@@ -22,11 +22,25 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     @IBOutlet weak var location: UILabel!
     
-    var canChange: Bool?
     var latitudeDoUsuario: Double?
+    
     var longitudeDoUsuario: Double?
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+        if segue.identifier == "passaAlerta" {
+            if segue.destination is AlertaViewController {
+                let nextScene =  segue.destination as! AlertaViewController
+                // Pass the selected object to the new view controller.
+                nextScene.lat = String(latitudeDoUsuario!)
+                nextScene.long = String(longitudeDoUsuario!)
+                nextScene.imagemRecebida = imagemPassada
+            }
+        }
+        
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,20 +70,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        latitudeDoUsuario = locValue.latitude
+        longitudeDoUsuario = locValue.longitude
+        location.text = String(describing: latitudeDoUsuario!)
+        print(latitudeDoUsuario!)
+        print(longitudeDoUsuario!)
         
-        if canChange == true {
-            
-            latitudeDoUsuario = locValue.latitude
-            longitudeDoUsuario = locValue.longitude
-            location.text = String(describing: latitudeDoUsuario!)
-            print(latitudeDoUsuario!)
-            print(longitudeDoUsuario!)
-            
-            annotation.coordinate = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
-            infraMap.addAnnotation(annotation)
-            canChange = false
-        }
-        
+        annotation.coordinate = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
     }
     
     //Camera do App
@@ -85,7 +92,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             self.present(imagePicker, animated: true, completion: nil)
             
             
-            canChange = true
             
             }
     }
@@ -98,11 +104,12 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             imagemPassada = pickedImage
             
             
-           
         }
         picker.dismiss(animated: true, completion: nil)
         
-        performSegue(withIdentifier: "passaAlerta", sender: (Any).self)
+        infraMap.addAnnotation(annotation)
+        
+        performSegue(withIdentifier: "passaAlerta", sender: nil)
     }
     
    
@@ -131,6 +138,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         
         self.present(alertController, animated: true, completion: nil)
     }
-
+    
+    
+    
 }
 
