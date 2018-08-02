@@ -11,9 +11,8 @@ import Foundation
 class AlertDAO {
     
     static func create(alert: Alert) {
-        if (JSONSerialization.isValidJSONObject(alert)){
             print("Sending data to server ...")
-            let endpoint: String = ""
+            let endpoint: String = "https://persistinframapdf.mybluemix.net/create"
             guard let url = URL(string: endpoint) else {
                 return print("Ërrooooo: Cannot create URL")
             }
@@ -23,10 +22,6 @@ class AlertDAO {
             urlRequest.httpBody = alert.toJSON()
             let task = URLSession.shared.dataTask(with: urlRequest)
             task.resume()
-            
-        } else {
-            print("JSON object is invalid!")
-        }
     }
 }
     

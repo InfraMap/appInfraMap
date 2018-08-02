@@ -33,8 +33,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if segue.destination is AlertaViewController {
                 let nextScene =  segue.destination as! AlertaViewController
                 // Pass the selected object to the new view controller.
-                nextScene.lat = String(latitudeDoUsuario!)
-                nextScene.long = String(longitudeDoUsuario!)
+                nextScene.lat = latitudeDoUsuario!
+                nextScene.long = longitudeDoUsuario!
                 nextScene.imagemRecebida = imagemPassada
             }
         }

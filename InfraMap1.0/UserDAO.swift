@@ -11,7 +11,6 @@ import Foundation
 class UserDAO{
     
     static func createUser(user: User) {
-        if (JSONSerialization.isValidJSONObject(user)){
             print("Sending data to server ...")
             let endpoint: String = ""
             guard let url = URL(string: endpoint) else {
@@ -23,9 +22,5 @@ class UserDAO{
             urlRequest.httpBody = user.toJSON()
             let task = URLSession.shared.dataTask(with: urlRequest)
             task.resume()
-            
-        } else {
-            print("JSON object is invalid!")
-        }
     }
 }
