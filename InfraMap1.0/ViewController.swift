@@ -16,11 +16,13 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     let annotation = MKPointAnnotation()
     
+    let regionRadius: CLLocationDistance = 80000
+    
     @IBOutlet weak var infraMap: MKMapView!
     
     var imagemPassada: UIImage!
     
-    @IBOutlet weak var location: UILabel!
+    var canZoom: Bool?
     
     var latitudeDoUsuario: Double?
     
@@ -33,8 +35,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
             if segue.destination is AlertaViewController {
                 let nextScene =  segue.destination as! AlertaViewController
                 // Pass the selected object to the new view controller.
-                nextScene.lat = latitudeDoUsuario!
-                nextScene.long = longitudeDoUsuario!
+                nextScene.lat = String(latitudeDoUsuario!)
+                nextScene.long = String(longitudeDoUsuario!)
                 nextScene.imagemRecebida = imagemPassada
             }
         }
@@ -43,6 +45,9 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        canZoom = true
+
         
         // Do any additional setup after loading the view, typically from a nib.
         
@@ -72,9 +77,22 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         latitudeDoUsuario = locValue.latitude
         longitudeDoUsuario = locValue.longitude
-        location.text = String(describing: latitudeDoUsuario!)
         print(latitudeDoUsuario!)
         print(longitudeDoUsuario!)
+        
+        
+        if canZoom == true {
+            let initialLocation = CLLocation(latitude: -15.7797200, longitude: -47.9297200)
+            
+            zoomLocation(location: initialLocation)
+            
+            canZoom = false
+        
+        }
+        
+        
+        
+        
         
         annotation.coordinate = CLLocationCoordinate2D(latitude: locValue.latitude, longitude: locValue.longitude)
     }
@@ -108,7 +126,6 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         picker.dismiss(animated: true, completion: nil)
         
         infraMap.addAnnotation(annotation)
-        
         performSegue(withIdentifier: "passaAlerta", sender: nil)
     }
     
@@ -139,6 +156,11 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func zoomLocation(location: CLLocation){
+        let coordinateRegion = MKCoordinateRegionMakeWithDistance(location.coordinate, regionRadius, regionRadius)
+        infraMap.setRegion(coordinateRegion, animated: true)
+    }
+
     
     
 }

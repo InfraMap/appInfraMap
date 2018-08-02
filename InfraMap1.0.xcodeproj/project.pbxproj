@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3F530B21211224FB000F8978 /* AlertaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F530B20211224FB000F8978 /* AlertaViewController.swift */; };
+		3F5C615D211387DB00A0D0AE /* icons8-marcador-100.png in Resources */ = {isa = PBXBuildFile; fileRef = 3F5C615C211387DB00A0D0AE /* icons8-marcador-100.png */; };
 		3F76A10E2110DB2C0021F9F7 /* UserDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A10D2110DB2C0021F9F7 /* UserDAO.swift */; };
 		3F76A1102110DB5B0021F9F7 /* AlertDAO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A10F2110DB5B0021F9F7 /* AlertDAO.swift */; };
 		3F76A1132110EAE80021F9F7 /* Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3F76A1122110EAE80021F9F7 /* Type.swift */; };
@@ -24,6 +25,7 @@
 
 /* Begin PBXFileReference section */
 		3F530B20211224FB000F8978 /* AlertaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertaViewController.swift; path = ../AlertaViewController.swift; sourceTree = "<group>"; };
+		3F5C615C211387DB00A0D0AE /* icons8-marcador-100.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "icons8-marcador-100.png"; path = "../../icons8-marcador-100.png"; sourceTree = "<group>"; };
 		3F76A10D2110DB2C0021F9F7 /* UserDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDAO.swift; sourceTree = "<group>"; };
 		3F76A10F2110DB5B0021F9F7 /* AlertDAO.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDAO.swift; sourceTree = "<group>"; };
 		3F76A1122110EAE80021F9F7 /* Type.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Type.swift; sourceTree = "<group>"; };
@@ -111,6 +113,7 @@
 		3FACFE11210FA8AC00D6805E /* View */ = {
 			isa = PBXGroup;
 			children = (
+				3F5C615C211387DB00A0D0AE /* icons8-marcador-100.png */,
 				3F87C2E7210B95F800D0B3DA /* Main.storyboard */,
 				3F87C2EC210B95F800D0B3DA /* LaunchScreen.storyboard */,
 			);
@@ -168,7 +171,7 @@
 				TargetAttributes = {
 					3F87C2DF210B95F800D0B3DA = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = G2LYJ299M5;
+						DevelopmentTeam = SNJ67C4956;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -199,6 +202,7 @@
 				3F87C2EE210B95F800D0B3DA /* LaunchScreen.storyboard in Resources */,
 				3F87C2EB210B95F800D0B3DA /* Assets.xcassets in Resources */,
 				3F87C2E9210B95F800D0B3DA /* Main.storyboard in Resources */,
+				3F5C615D211387DB00A0D0AE /* icons8-marcador-100.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,11 +348,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G2LYJ299M5;
+				DEVELOPMENT_TEAM = SNJ67C4956;
 				INFOPLIST_FILE = InfraMap1.0/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMap3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMapDF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
@@ -360,11 +364,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = G2LYJ299M5;
+				DEVELOPMENT_TEAM = SNJ67C4956;
 				INFOPLIST_FILE = InfraMap1.0/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.2.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMap3;
+				PRODUCT_BUNDLE_IDENTIFIER = com.hackatruck.InfraMapDF;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;

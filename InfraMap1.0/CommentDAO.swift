@@ -11,6 +11,7 @@ import Foundation
 class CommentDAO {
     
     static func create(comment: Comment) {
+        if (JSONSerialization.isValidJSONObject(comment)){
             print("Sending data to server ...")
             let endpoint: String = ""
             guard let url = URL(string: endpoint) else {
@@ -22,5 +23,8 @@ class CommentDAO {
             urlRequest.httpBody = comment.toJSON()
             let task = URLSession.shared.dataTask(with: urlRequest)
             task.resume()
+        } else {
+            print("JSON object is invalid!")
+        }
     }
 }

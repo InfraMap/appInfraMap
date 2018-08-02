@@ -21,34 +21,32 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juw-in-RHA">
-                                <rect key="frame" x="16" y="623" width="54" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Camera"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RnN-cf-kMX">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                            </mapView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="juw-in-RHA">
+                                <rect key="frame" x="275" y="466" width="100" height="100"/>
+                                <state key="normal" image="icons8-marcador-100.png"/>
                                 <connections>
                                     <action selector="Camera:" destination="BYZ-38-t0r" eventType="touchUpInside" id="IgD-eP-Vyi"/>
                                 </connections>
                             </button>
-                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="RnN-cf-kMX">
-                                <rect key="frame" x="0.0" y="65" width="375" height="497"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </mapView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SIx-I0-BjW">
-                                <rect key="frame" x="16" y="594" width="42" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="juw-in-RHA" secondAttribute="trailing" id="1fd-kA-n0A"/>
+                            <constraint firstAttribute="trailing" secondItem="RnN-cf-kMX" secondAttribute="trailing" id="HJy-4x-gQB"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="juw-in-RHA" secondAttribute="bottom" constant="57" id="IpI-vr-OeN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="RnN-cf-kMX" secondAttribute="bottom" id="WvO-3p-8Br"/>
+                            <constraint firstItem="RnN-cf-kMX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="rTJ-FD-FTJ"/>
+                            <constraint firstItem="RnN-cf-kMX" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="rh7-no-uVI"/>
+                        </constraints>
                     </view>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="znd-4Y-bf8"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="infraMap" destination="RnN-cf-kMX" id="KjF-W1-YlY"/>
-                        <outlet property="location" destination="SIx-I0-BjW" id="qGr-SJ-5uP"/>
                         <segue destination="oXb-RH-RJw" kind="show" identifier="passaAlerta" id="cHi-wA-y8E"/>
                     </connections>
                 </viewController>
@@ -68,36 +66,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMe-mL-r5z">
-                                <rect key="frame" x="16" y="495" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ief-bp-3NJ">
-                                <rect key="frame" x="16" y="551" width="343" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kis-kB-UZb">
-                                <rect key="frame" x="0.0" y="72" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Kis-kB-UZb">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Kis-kB-UZb" secondAttribute="trailing" id="8zx-V8-mvc"/>
+                            <constraint firstItem="Kis-kB-UZb" firstAttribute="top" secondItem="MgW-I7-YtY" secondAttribute="bottom" id="CeX-Rx-Dg9"/>
+                            <constraint firstItem="Kis-kB-UZb" firstAttribute="leading" secondItem="5fr-dY-KfP" secondAttribute="leading" id="Prj-Hp-mCX"/>
+                            <constraint firstItem="wZM-xX-XC3" firstAttribute="top" secondItem="Kis-kB-UZb" secondAttribute="bottom" id="kvj-SE-fKj"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="foto" destination="Kis-kB-UZb" id="Jn8-ps-uQd"/>
-                        <outlet property="latitude" destination="nMe-mL-r5z" id="uNe-bf-J0v"/>
-                        <outlet property="longitude" destination="Ief-bp-3NJ" id="tpB-18-9uL"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FCw-SY-pLP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2065" y="139"/>
+            <point key="canvasLocation" x="2064.8000000000002" y="138.98050974512745"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Ygn-PT-rYD">
@@ -118,4 +105,7 @@
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icons8-marcador-100.png" width="100" height="100"/>
+    </resources>
 </document>
